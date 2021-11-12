@@ -28,17 +28,13 @@
                     <i class="fa fa-globe"></i><span class="hide-menu"></span>Store</a>
                 </li>
                 <li> 
-                    <a class="waves-effect waves-dark" aria-expanded="false">
-                    <i class="fa fa-angle-down"></i><span class="hide-menu"></span>Data Master</a>
-                    <ul >
-                        <li>
-                            <a class="waves-effect waves-dark" href="index.php?page=varian" aria-expanded="false">
-                            <i class="fa fa-leaf"></i><span class="hide-menu">Varian</span></a>
-                        </li>
-                        <li>
-                            <a class="waves-effect waves-dark" href="index.php?page=kota" aria-expanded="false">
-                            <i class="fa fa-map-marker"></i><span class="hide-menu">Kota</span></a>
-                        </li>
+                    <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                        <i class="fa fa-angle-down"></i>
+                        <span class="hide-menu">Data Master</span>
+                    </a>
+                    <ul aria-expanded="false" class="collapse">
+                        <li><a href="index.php?page=varian">Varian<i class="fa fa-leaf"></i></a></li>
+                        <li><a href="index.php?page=kota">Kota<i class="fa fa-map-marker"></i></a></li>
                     </ul>
                 </li>
                 <li> 
