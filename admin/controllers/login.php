@@ -15,6 +15,6 @@
         //setcookie("id", $id, time() + (86400 * 30), "/"); 
         header("Location:index.php?page=profil"); 
         //echo $id."<br>".$role;
-    } else {header("Location:index.php?page=login&gagal=1");}
+    } else {$error="Username/password salah";}
   }
 ?>
