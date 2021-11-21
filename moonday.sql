@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 12, 2021 at 01:06 PM
+-- Generation Time: Nov 21, 2021 at 07:05 PM
 -- Server version: 10.4.20-MariaDB-log
 -- PHP Version: 8.0.9
 
@@ -111,7 +111,8 @@ INSERT INTO `user` (`id_user`, `nama`, `username`, `password`, `level`, `foto`) 
 (3, 'Zahran', 'zahran', 'e10adc3949ba59abbe56e057f20f883e', 'superadmin', ''),
 (4, 'Dena', 'dena', 'e10adc3949ba59abbe56e057f20f883e', 'admin', ''),
 (5, 'Putra', 'putra', 'e10adc3949ba59abbe56e057f20f883e', 'admin', ''),
-(6, 'Nevian', 'nevian', 'e10adc3949ba59abbe56e057f20f883e', 'admin', '');
+(6, 'Nevian', 'nevian', 'e10adc3949ba59abbe56e057f20f883e', 'admin', ''),
+(7, 'Misaka', 'misaka', '9c5fa085ce256c7c598f6710584ab25d', 'admin', '7.png');
 
 -- --------------------------------------------------------
 
@@ -204,7 +205,7 @@ ALTER TABLE `store`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_user` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `varian`
