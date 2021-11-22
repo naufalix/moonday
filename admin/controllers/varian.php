@@ -1,3 +1,36 @@
 <?php
+	require("models/varian.php");
+  $varian = new varian();
+  
+  /* Tambah */ 
+  if (isset($_POST["submit-tambah"])) {
+    if (!empty($_POST["varian"])) {
+        $v = $_POST["varian"];
+          $varian->tambah($v);
+          $success = "Varian berhasil ditambahkan";
+      }else {$error = "Data Varian wajib diisi!";}
+  }
 
+  /* Edit */
+  if (isset($_POST["submit-edit"])) {
+    if (!empty($_POST["id_varian"])&&!empty($_POST["varian"])) {
+      $i = $_POST["id_varian"];
+      $v = $_POST["varian"];
+      if ($i==$v) {
+        $varian->ubah($v);
+        $success = "Data berhasil diedit";
+      }
+    } 
+  }
+
+  /* Hapus Varian*/ 
+  if (isset($_POST["submit-hapus"])) {
+    if (!empty($_POST["id_varian"])) {
+      $i = $_POST["id_varian"];
+      $varian->hapus($i);
+      $success = " Data Varian berhasil dihapus";
+    }
+  } 
+
+  $data_varian = $varian->tampil();
 ?>
