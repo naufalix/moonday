@@ -16,10 +16,8 @@
     if (!empty($_POST["id_varian"])&&!empty($_POST["varian"])) {
       $i = $_POST["id_varian"];
       $v = $_POST["varian"];
-      if ($i==$v) {
-        $varian->ubah($v);
+        $varian->ubah($i,$v);
         $success = "Data berhasil diedit";
-      }
     } 
   }
 
