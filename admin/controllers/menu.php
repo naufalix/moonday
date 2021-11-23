@@ -1,6 +1,6 @@
 <?php
-require("models/menu.php");
-  require("models/varian.php");
+    require("models/menu.php");
+    require("models/varian.php");
     $menu = new menu();
     $varian = new varian();
     
@@ -58,4 +58,5 @@ require("models/menu.php");
     } 
   
     $data_menu = $menu->tampil();
+    $data_varian = $varian->tampil();
 ?>

@@ -7,29 +7,29 @@ class menu{
         $this->db = $this->db->get_koneksi();
     }
  
-    public function tambah($nama,$deskripsi,$varian)
+    public function tambah($nama,$deskripsi,$id_varian)
     {
-        $insert = $this->db->prepare('INSERT INTO user (nama,deskripsi,varian) VALUES (?,?,?)');
+        $insert = $this->db->prepare('INSERT INTO menu (nama,deskripsi,id_varian) VALUES (?,?,?)');
         $insert->bindParam(1, $nama);
         $insert->bindParam(2, $deskripsi);
-        $insert->bindParam(3, $varian);
+        $insert->bindParam(3, $id_varian);
         $insert->execute();
         return $insert;
     }
  
     public function tampil()
     {
-        $show = $this->db->prepare("SELECT menu.id_menu, menu.nama, menu.deskripsi, varian.varian FROM `menu` INNER JOIN `varian` ON varian.id_varian = menu.id_varian");
+        $show = $this->db->prepare("SELECT * FROM `menu`");
         $show->execute();
         $data = $show->fetchAll();
         return $data;
     }
  
-    public function ubah($id_menu,$nama,$deskripsi,$varian){
-        $update = $this->db->prepare('UPDATE menu SET nama=?, deskripsi=?, varian=? WHERE `id_menu`=?');
+    public function ubah($id_menu,$nama,$deskripsi,$id_varian){
+        $update = $this->db->prepare('UPDATE menu SET nama=?, deskripsi=?, id_varian=? WHERE `id_menu`=?');
         $update->bindParam(1, $nama);
         $update->bindParam(2, $deskripsi);
-        $update->bindParam(3, $varian);
+        $update->bindParam(3, $id_varian);
         $update->bindParam(4, $id_menu);
         $update->execute();
         return $update;

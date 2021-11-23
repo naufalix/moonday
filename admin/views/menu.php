@@ -32,9 +32,9 @@
                                         <thead>
                                             <tr>
                                                 <th class="text-center">No</th>
-                                                <th style="width: 20%;">Nama</th>
-                                                <th style="width: 80%;">Deskripsi</th>
-                                                <th>Varian</th>
+                                                <th style="min-width: 100px;">Nama</th>
+                                                <th style="width: 100%;">Deskripsi</th>
+                                                <th style="min-width: 100px;">Varian</th>
                                                 <th style="min-width: 110px;"><center>Aksi</center></th>
                                             </tr>
                                         </thead>
@@ -96,8 +96,13 @@
                                 <div class="col-6 p-0 pr-2">
                                   <label for="varian">Varian</label>
                                   <select class="form-control" id="id_varian" name="id_varian">
-                                    <option value="1">Coffe</option>
-                                    <option value="2">Non-Coffe</option>
+                                    <?php 
+                                        foreach($data_varian as $row) {
+                                            $iv = $row['id_varian'];
+                                            $nv = $row['varian'];
+                                    ?>
+                                    <option value="<?= $iv ?>"><?= $nv ?></option>
+                                    <?php } ?>
                                   </select>
                                 </div>
                               </div>
@@ -139,15 +144,20 @@
                                 <div class="col-6 p-0 pr-2">
                                   <label for="varian">Varian</label>
                                   <select class="form-control" name="id_varian">
-                                    <option class="ev" value="1">Coffe</option>
-                                    <option class="ev" value="2">Non-Coffe</option>
+                                    <?php 
+                                        foreach($data_varian as $row) {
+                                            $iv = $row['id_varian'];
+                                            $nv = $row['varian'];
+                                    ?>
+                                    <option class="ev" value="<?= $iv ?>"><?= $nv ?></option>
+                                    <?php } ?>
                                   </select>
                                 </div>
                               </div>
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                              <button type="submit" class="btn btn-success" name="submit-tambah" ><i class="fa fa-check"></i><span> Submit</span></button>
+                              <button type="submit" class="btn btn-success" name="submit-edit" ><i class="fa fa-check"></i><span> Submit</span></button>
                             </div>
                           </form>
                         </div>

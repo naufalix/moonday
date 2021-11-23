@@ -23,6 +23,13 @@ class varian{
         return $data;
     }
 
+    public function tampil_id($id_varian){
+        $show = $this->db->prepare("SELECT * FROM varian WHERE id_varian = ?");
+        $show->bindParam(1, $id_varian);
+        $show->execute();
+        return $show->fetch();
+    }
+
     public function ubah($id_varian,$varian){
         $update = $this->db->prepare('UPDATE varian SET varian=? WHERE `id_varian`=?');
         $update->bindParam(1, $varian);
