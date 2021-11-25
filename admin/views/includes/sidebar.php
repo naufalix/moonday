@@ -37,10 +37,12 @@
                         <li><a href="index.php?page=kota">Kota<i class="fa fa-map-marker"></i></a></li>
                     </ul>
                 </li>
+                <?php if ($level=="superadmin") { ?>
                 <li> 
                     <a class="waves-effect waves-dark" href="index.php?page=user" aria-expanded="false">
                     <i class="fa fa-cog"></i><span class="hide-menu"></span>Pengaturan User</a>
                 </li>
+                <?php } ?>
                 <div class="text-center m-t-30">
                     <a href="index.php?page=logout" class="btn waves-effect waves-light btn-success hidden-md-down"> Sign out</a>
                 </div>

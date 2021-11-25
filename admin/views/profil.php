@@ -19,11 +19,11 @@
                         <div class="card">
                             <div class="card-body">
                                 <center class="m-t-30">
-                                    <div class="img-circle row" style="background-image: url(assets/images/users/<?= $profil['foto'] ?>);width: 150px; height: 150px; background-size: cover;">
+                                    <div class="img-circle row" style="background-image: url(assets/images/users/<?= $foto ?>);width: 150px; height: 150px; background-size: cover;">
                                         <button type="button" class="btn btn-info btn-circle" data-toggle="modal" data-target="#foto" style="margin-top: auto;margin-left: auto;"><i class="fa fa-pencil"></i> </button>
                                     </div>
-                                    <h4 class="card-title m-t-10"><?= $profil['nama'] ?></h4>
-                                    <h6 class="card-subtitle"><?= ucfirst($profil['level']) ?></h6>
+                                    <h4 class="card-title m-t-10"><?= $nama ?></h4>
+                                    <h6 class="card-subtitle"><?= ucfirst($level) ?></h6>
                                 </center>
                             </div>
                         </div>
@@ -36,13 +36,13 @@
                                     <div class="form-group">
                                         <label class="col-md-12">Nama</label>
                                         <div class="col-md-12">
-                                            <input type="text" class="form-control form-control-line" name="nama" value="<?= $profil['nama'] ?>" placeholder="Nama">
+                                            <input type="text" class="form-control form-control-line" name="nama" value="<?= $nama ?>" placeholder="Nama">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-12">Username</label>
                                         <div class="col-md-12">
-                                            <input type="text" class="form-control form-control-line" name="username" value="<?= $profil['username'] ?>" placeholder="Username">
+                                            <input type="text" class="form-control form-control-line" name="username" value="<?= $username ?>" placeholder="Username">
                                         </div>
                                     </div>
                                     <div class="form-group">

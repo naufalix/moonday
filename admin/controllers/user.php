@@ -1,5 +1,8 @@
 <?php
 	//require("models/user.php");
+  if ($level=="admin") {
+    header("Location: index.php?page=404");
+  }
   $user = new user();
   
   /* Tambah */ 
