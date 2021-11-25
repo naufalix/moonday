@@ -15,68 +15,75 @@
                 </div>
                 <!-- Row -->
                 <div class="row">
-                    <!-- Column -->
                     <div class="col-lg-4 col-xlg-3 col-md-5">
                         <div class="card">
                             <div class="card-body">
-                                <center class="m-t-30"> <img src="assets/images/users/5.jpg" class="img-circle"
-                                        width="150" />
-                                    <h4 class="card-title m-t-10">Hanna Gover</h4>
-                                    <h6 class="card-subtitle">Superadmin</h6>
+                                <center class="m-t-30">
+                                    <div class="img-circle row" style="background-image: url(assets/images/users/<?= $profil['foto'] ?>);width: 150px; height: 150px; background-size: cover;">
+                                        <button type="button" class="btn btn-info btn-circle" data-toggle="modal" data-target="#foto" style="margin-top: auto;margin-left: auto;"><i class="fa fa-pencil"></i> </button>
+                                    </div>
+                                    <h4 class="card-title m-t-10"><?= $profil['nama'] ?></h4>
+                                    <h6 class="card-subtitle"><?= ucfirst($profil['level']) ?></h6>
                                 </center>
                             </div>
                         </div>
                     </div>
-                    <!-- Column -->
-                    <!-- Column -->
                     <div class="col-lg-8 col-xlg-9 col-md-7">
                         <div class="card">
                             <!-- Tab panes -->
                             <div class="card-body">
-
-                            <div class="col-sm-12">
-                                <div class="alert alert-success" role="alert">Profil berhasil diubah</div>
-                            </div>
-
-                                <form class="form-horizontal form-material">
+                                <form method="post" class="form-horizontal form-material">
                                     <div class="form-group">
                                         <label class="col-md-12">Nama</label>
                                         <div class="col-md-12">
-                                            <input type="text" placeholder="Johnathan Doe"
-                                                disabled class="form-control form-control-line">
+                                            <input type="text" class="form-control form-control-line" name="nama" value="<?= $profil['nama'] ?>" placeholder="Nama">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-12">Username</label>
                                         <div class="col-md-12">
-                                            <input type="text" placeholder="johnathan@admin.com"
-                                                disabled class="form-control form-control-line">
+                                            <input type="text" class="form-control form-control-line" name="username" value="<?= $profil['username'] ?>" placeholder="Username">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-md-12">Role</label>
-                                        <div class="col-md-12">
-                                            <input type="text" disabled placeholder="Superadmin"
-                                                class="form-control form-control-line">
+                                        <div class="col-sm-12">
+                                            <button type="submit" name="submit-profil" class="btn btn-success float-left">
+                                                <i class="fa fa-save"></i> Simpan
+                                            </button>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <a href="index.php?page=ubahpassword">
+                                            <button class="btn btn-warning float-left" style="margin-left:20px;" >
+                                            <i class="fa fa-lock"></i> Edit Password</button></a>
                                         </div>
                                     </div>
                                 </form>
-                                <!--button-->
-                                <div class="form-group">
-                                    <div class="col-sm-12">
-                                        <a href="index.php?page=editprofil">
-                                        <button class="btn btn-success float-left">
-                                        <i class="fa fa-edit"></i> Edit Profil</button></a>
-                                    </div>
-                                    <div class="col-sm-12">
-                                        <a href="index.php?page=ubahpassword">
-                                        <button class="btn btn-warning float-left" style="margin-left:20px;" >
-                                        <i class="fa fa-lock"></i> Edit Password</button></a>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
                     <!-- Column -->
+                </div>
+            </div>
+
+            <div id="foto" class="modal" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+                <div class="modal-dialog modal-md">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="fd">Form edit foto</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="forms-sample" method="post" enctype="multipart/form-data">
+                              <div class="form-group">
+                                <p for="foto">Upload foto :</p>
+                                <input type="file" class="form-control" name="foto" required style="height: auto">
+                              </div>
+                              <div class="modal-footer p-0 pt-3">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-success btn-shadow" name="submit-foto"><i class="fa fa-save"></i><span> Simpan</span></button>
+                              </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
