@@ -32,7 +32,7 @@
                                         <thead>
                                             <tr>
                                                 <th class="text-center">No</th>
-                                                <th style="min-width: 100px;">Nama</th>
+                                                <th style="min-width: 200px;">Nama</th>
                                                 <th style="width: 100%;">Deskripsi</th>
                                                 <th style="min-width: 100px;">Varian</th>
                                                 <th style="min-width: 110px;"><center>Aksi</center></th>
@@ -46,6 +46,8 @@
                                                     $nama       = $row['nama'];
                                                     $deskripsi  = $row['deskripsi'];
                                                     $id_varian  = $row['id_varian'];
+                                                    $foto       = $row['foto'];
+                                                    if (empty($foto)) {$foto="default.png";}
                                                     $nv         = $varian->tampil_id($id_varian)["varian"]
                                             ?>
                                             <tr>
