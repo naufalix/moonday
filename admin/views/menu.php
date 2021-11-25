@@ -50,7 +50,10 @@
                                             ?>
                                             <tr>
                                                 <td class="text-center"><?= $no ?></td>
-                                                <td><?= $nama ?></td>
+                                                <!--  <td><?= $nama ?></td> -->
+                                                <td>
+                                                    <img src="assets/images/menu/<?= $foto ?>" alt="user" height="30" width="30" class="rounded-circle mr-2" style="object-fit: cover">
+                                                    <?= $nama ?>
                                                 <td><?= $deskripsi ?></td>
                                                 <td><span class="label label-success"><?= $nv ?></span></td>
                                                 <td align="center">
