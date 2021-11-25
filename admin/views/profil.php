@@ -52,9 +52,9 @@
                                             </button>
                                         </div>
                                         <div class="col-sm-12">
-                                            <a href="index.php?page=ubahpassword">
-                                            <button class="btn btn-warning float-left" style="margin-left:20px;" >
-                                            <i class="fa fa-lock"></i> Edit Password</button></a>
+                                            <a href="index.php?page=ubahpassword" class="btn btn-warning float-left" style="margin-left:20px;" >
+                                                <i class="fa fa-lock"></i> Edit Password
+                                            </a>
                                         </div>
                                     </div>
                                 </form>
