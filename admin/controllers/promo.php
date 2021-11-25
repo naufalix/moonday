@@ -11,13 +11,13 @@
         $m = $_POST["id_menu"];
         $end = $_POST["end"];
         $promo->tambah($n,$m,$end);
-        $success = "Menu berhasil ditambahkan";
+        $success = "Promo berhasil ditambahkan";
         }else {
-            $error = "Data Menu wajib diisi!";
+            $error = "Data Promo wajib diisi!";
         }
     }
   
-    /* Edit */
+    /* Edit promo */
     if (isset($_POST["submit-edit"])) {
       if (!empty($_POST["id_promo"])&&!empty($_POST["nama"])&&!empty($_POST["end"])&&!empty($_POST["id_menu"])) {
         $p = $_POST["id_promo"];
@@ -48,12 +48,12 @@
     }
   }
   
-    /* Hapus Menu*/ 
+    /* Hapus Promo*/ 
     if (isset($_POST["submit-hapus"])) {
       if (!empty($_POST["id_promo"])) {
         $p = $_POST["id_promo"];
         $promo->hapus($p);
-        $success = " Data Menu berhasil dihapus";
+        $success = " Data Promo berhasil dihapus";
       }
     } 
   /* Tampil */
