@@ -79,17 +79,15 @@
                 <form class="forms-sample" method="post">
                     <div class="form-group">
                         <div class="row m-0">
-                            <div class="col-7 p-0 pr-2">
-                                <label for="kota">kota</label>
-                                <input type="text" class="form-control" id="kota" name="kota" placeholder="kota..."
-                                    required>
+                            <div class="col-12 p-0">
+                                <label for="kota">Nama kota</label>
+                                <input type="text" class="form-control" id="kota" name="kota" placeholder="kota..." required>
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-success" name="submit-tambah"><i
-                                class="fa fa-check"></i><span> Submit</span></button>
+                        <button type="submit" class="btn btn-success" name="submit-tambah"><i class="fa fa-check"></i><span> Submit</span></button>
                     </div>
                 </form>
             </div>
@@ -109,17 +107,15 @@
                     <input type="hidden" class="d-none" id="ei" name="id_kota">
                     <div class="form-group">
                         <div class="row m-0">
-                            <div class="col-7 p-0 pr-2">
+                            <div class="col-12 p-0">
                                 <label for="kota">kota</label>
-                                <input type="text" class="form-control" id="en" name="kota" placeholder="kota..."
-                                    required>
+                                <input type="text" class="form-control" id="en" name="kota" placeholder="kota..." required>
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-success" name="submit-edit"><i
-                                class="fa fa-save"></i><span> Save</span></button>
+                        <button type="submit" class="btn btn-success" name="submit-edit"><i class="fa fa-save"></i><span> Save</span></button>
                     </div>
                 </form>
             </div>

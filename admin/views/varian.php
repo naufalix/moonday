@@ -73,7 +73,7 @@
                             <form class="forms-sample" method="post">
                             <div class="form-group">
                               <div class="row m-0">
-                                <div class="col-7 p-0 pr-2">
+                                <div class="col-12 p-0">
                                   <label for="varian">Varian</label>
                                   <input type="text" class="form-control" id="varian" name="varian" placeholder="Varian..." required>
                                 </div>
@@ -101,7 +101,7 @@
                                 <input type="hidden" class="d-none" id="ei" name="id_varian">
                                 <div class="form-group">
                                   <div class="row m-0">
-                                    <div class="col-7 p-0 pr-2">
+                                    <div class="col-12 p-0">
                                       <label for="varian">Varian</label>
                                       <input type="text" class="form-control" id="en" name="varian" placeholder="Varian..." required>
                                     </div>

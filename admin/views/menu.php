@@ -52,9 +52,8 @@
                                             ?>
                                             <tr>
                                                 <td class="text-center"><?= $no ?></td>
-                                                <!--  <td><?= $nama ?></td> -->
                                                 <td>
-                                                    <img src="assets/images/menu/<?= $foto ?>" alt="user" height="30" width="30" class="rounded-circle mr-2" style="object-fit: cover">
+                                                    <img src="assets/images/menu/<?= $foto ?>" height="30" width="30" class="mr-2" style="object-fit: cover">
                                                     <?= $nama ?>
                                                 <td><?= $deskripsi ?></td>
                                                 <td><span class="label label-success"><?= $nv ?></span></td>
@@ -86,19 +85,11 @@
                             <form class="forms-sample" method="post">
                             <div class="form-group">
                               <div class="row m-0">
-                                <div class="col-5 p-0 pr-2">
+                                <div class="col-7 p-0 pr-2">
                                   <label for="nama">Nama</label>
                                   <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama..." required>
                                 </div>
-                                <div class="col-7 p-0 pr-2">
-                                  <label for="deskripsi">Deskripsi</label>
-                                  <input type="text-area" class="form-control" id="deskripsi" name="deskripsi" placeholder="Deskripsi..." required>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="form-group">
-                              <div class="row m-0">
-                                <div class="col-6 p-0 pr-2">
+                                <div class="col-5 p-0">
                                   <label for="varian">Varian</label>
                                   <select class="form-control" id="id_varian" name="id_varian">
                                     <?php 
@@ -109,6 +100,14 @@
                                     <option value="<?= $iv ?>"><?= $nv ?></option>
                                     <?php } ?>
                                   </select>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="row m-0">
+                                <div class="col-12 p-0">
+                                    <label for="deskripsi">Deskripsi</label>
+                                    <textarea class="form-control" rows="5" name="deskripsi" placeholder="Deskripsi..." required></textarea>
                                 </div>
                               </div>
                             </div>
@@ -134,19 +133,11 @@
                         <input type="hidden" class="d-none" id="ei" name="id_menu">
                             <div class="form-group">
                               <div class="row m-0">
-                                <div class="col-5 p-0 pr-2">
+                                <div class="col-7 p-0 pr-2">
                                   <label for="nama">Nama</label>
                                   <input type="text" class="form-control" id="en" name="nama" placeholder="Nama..." required>
                                 </div>
-                                <div class="col-7 p-0 pr-2">
-                                  <label for="deskripsi">Deskripsi</label>
-                                  <input type="text" class="form-control" id="ed" name="deskripsi" placeholder="Deskripsi..." required>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="form-group">
-                              <div class="row m-0">
-                                <div class="col-6 p-0 pr-2">
+                                <div class="col-5 p-0">
                                   <label for="varian">Varian</label>
                                   <select class="form-control" name="id_varian">
                                     <?php 
@@ -157,6 +148,14 @@
                                     <option class="ev" value="<?= $iv ?>"><?= $nv ?></option>
                                     <?php } ?>
                                   </select>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="row m-0">
+                                <div class="col-12 p-0">
+                                    <label for="deskripsi">Deskripsi</label>
+                                    <textarea class="form-control" rows="5" id="ed" name="deskripsi" placeholder="Deskripsi..." required></textarea>
                                 </div>
                               </div>
                             </div>

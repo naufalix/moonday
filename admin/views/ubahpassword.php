@@ -30,7 +30,7 @@
                                             <input type="password" class="form-control" name="pl" required style="border:1px solid dimgray;">
                                             <?php
                                               if (!empty($passl)&&$passl=="salah") { ?>
-                                                <p class="text-danger">Password lama salah!</p>
+                                                <p class="text-danger m-0">Password lama salah!</p>
                                               <?php } 
                                             ?>
                                         </div>
@@ -41,7 +41,7 @@
                                             <input type="password" class="form-control" name="pb" required style="border:1px solid dimgray;">
                                             <?php
                                               if (!empty($passb)&&$passb=="sama") { ?>
-                                                <p class="text-danger">Password baru tidak boleh sama dengan password lama!</p>
+                                                <p class="text-danger m-0">Password baru tidak boleh sama dengan password lama!</p>
                                               <?php } 
                                             ?>
                                         </div>
@@ -52,7 +52,7 @@
                                             <input type="password" class="form-control" name="pk" required style="border:1px solid dimgray;">
                                             <?php
                                               if (!empty($passk)&&$passk=="salah") { ?>
-                                                <p class="text-danger">Password konfirmasi salah!</p>
+                                                <p class="text-danger m-0">Password konfirmasi salah!</p>
                                               <?php }
                                             ?>
                                         </div>
