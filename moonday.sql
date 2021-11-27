@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2021 at 07:05 PM
+-- Generation Time: Nov 27, 2021 at 06:55 PM
 -- Server version: 10.4.20-MariaDB-log
 -- PHP Version: 8.0.9
 
@@ -45,6 +45,14 @@ CREATE TABLE `kota` (
   `kota` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `kota`
+--
+
+INSERT INTO `kota` (`id_kota`, `kota`) VALUES
+(2, 'Jakarta'),
+(3, 'Surabaya');
+
 -- --------------------------------------------------------
 
 --
@@ -58,6 +66,16 @@ CREATE TABLE `menu` (
   `id_varian` int(11) NOT NULL,
   `foto` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `menu`
+--
+
+INSERT INTO `menu` (`id_menu`, `nama`, `deskripsi`, `id_varian`, `foto`) VALUES
+(1, 'Matcha Latte', 'Deskripsi Matcha Latte', 2, ''),
+(2, 'Brown Sugar Boba Milk Tea', 'Deskripsi Brown Sugar Boba Milk Tea', 3, ''),
+(4, 'Green Tea', 'Deskripsi Green Tea', 3, ''),
+(6, 'Black Coffe', 'Deskripsi Black Coffe', 1, '');
 
 -- --------------------------------------------------------
 
@@ -73,6 +91,14 @@ CREATE TABLE `promo` (
   `foto` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `promo`
+--
+
+INSERT INTO `promo` (`id_promo`, `nama`, `id_menu`, `end`, `foto`) VALUES
+(1, 'Monday Madness', 1, '2021-11-30 23:37:00', ''),
+(2, 'Coffee Night', 2, '2021-12-10 23:41:00', '');
+
 -- --------------------------------------------------------
 
 --
@@ -82,9 +108,17 @@ CREATE TABLE `promo` (
 CREATE TABLE `store` (
   `id_store` int(11) NOT NULL,
   `nama` varchar(50) NOT NULL,
+  `alamat` text NOT NULL,
   `id_kota` int(11) NOT NULL,
   `lokasi` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `store`
+--
+
+INSERT INTO `store` (`id_store`, `nama`, `alamat`, `id_kota`, `lokasi`) VALUES
+(1, 'Cabang Jakarta', '', 2, 'lokasi');
 
 -- --------------------------------------------------------
 
@@ -126,6 +160,15 @@ CREATE TABLE `varian` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Dumping data for table `varian`
+--
+
+INSERT INTO `varian` (`id_varian`, `varian`) VALUES
+(1, 'Coffe'),
+(2, 'Non-coffe'),
+(3, 'Tea');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -152,6 +195,7 @@ ALTER TABLE `menu`
 -- Indexes for table `promo`
 --
 ALTER TABLE `promo`
+  ADD PRIMARY KEY (`id_promo`),
   ADD KEY `id_menu` (`id_menu`);
 
 --
@@ -187,19 +231,25 @@ ALTER TABLE `about`
 -- AUTO_INCREMENT for table `kota`
 --
 ALTER TABLE `kota`
-  MODIFY `id_kota` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_kota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `promo`
+--
+ALTER TABLE `promo`
+  MODIFY `id_promo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `store`
 --
 ALTER TABLE `store`
-  MODIFY `id_store` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_store` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `user`
@@ -211,7 +261,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `varian`
 --
 ALTER TABLE `varian`
-  MODIFY `id_varian` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_varian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
