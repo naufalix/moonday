@@ -13,7 +13,7 @@
         $_SESSION['id'] = $id;
         $_SESSION['level'] = $level;
         //setcookie("id", $id, time() + (86400 * 30), "/"); 
-        header("Location:index.php?page=profil"); 
+        header("Location:index.php?page=dashboard"); 
         //echo $id."<br>".$role;
     } else {$error="Username/password salah";}
   }
