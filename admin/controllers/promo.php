@@ -19,12 +19,12 @@
   
     /* Edit promo */
     if (isset($_POST["submit-edit"])) {
-      if (!empty($_POST["id_promo"])&&!empty($_POST["nama"])&&!empty($_POST["end"])&&!empty($_POST["id_menu"])) {
+      if (!empty($_POST["id_promo"])&&!empty($_POST["nama"])&&!empty($_POST["id_menu"])&&!empty($_POST["end"])) {
         $p = $_POST["id_promo"];
         $n = $_POST["nama"];
-        $end = $_POST["end"];
         $m = $_POST["id_menu"];
-          $promo->ubah($p,$n,$end,$m);
+        $end = $_POST["end"];
+          $promo->ubah($p,$n,$m,$end);
           $success = "Data berhasil diedit";
       } 
     }
@@ -58,4 +58,5 @@
     } 
   /* Tampil */
     $data_promo = $promo->tampil();
+    $data_menu  = $menu->tampil();
 ?>
