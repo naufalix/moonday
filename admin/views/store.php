@@ -31,9 +31,9 @@
                             <thead>
                                 <tr>
                                     <th class="text-center">No</th>
-                                    <th style="min-width: 100px;">Nama</th>
-                                    <th style="width: 100%;">Kota</th>
-                                    <th style="min-width: 100px;">Lokasi</th>
+                                    <th style="min-width:200px; width: 100%;">Nama</th>
+                                    <th>Kota</th>
+                                    <th>Lokasi</th>
                                     <th style="min-width: 110px;">
                                         <center>Aksi</center>
                                     </th>
@@ -55,14 +55,9 @@
                                     <td><?= $nk ?></td>
                                     <td><?= $lokasi ?></td>
                                     <td align="center">
-                                        <button type="button" class="btn btn-s btn-info" title="Edit"
-                                            data-toggle="modal" data-target="#edit" onclick="edit(<?= $id_store ?>)"><i
-                                                class="fa fa-pencil"></i></button>
-                                        <p id="<?= $id_store ?>" class="d-none">
-                                            <?php echo $nama.'|'.$id_kota.'|'.$lokasi ?></p>
-                                        <button type="button" class="btn btn-s btn-danger" title="Hapus"
-                                            data-toggle="modal" data-target="#hapus"
-                                            onclick="hapus(<?= $id_store ?>)"><i class="fa fa-trash"></i></button>
+                                        <button type="button" class="btn btn-s btn-info" title="Edit" data-toggle="modal" data-target="#edit" onclick="edit(<?= $id_store ?>)"><i class="fa fa-pencil"></i></button>
+                                        <p id="<?= $id_store ?>" class="d-none"><?php echo $nama.'|'.$id_kota.'|'.$lokasi ?></p>
+                                        <button type="button" class="btn btn-s btn-danger" title="Hapus" data-toggle="modal" data-target="#hapus" onclick="hapus(<?= $id_store ?>)"><i class="fa fa-trash"></i></button>
                                     </td>
                                 </tr>
                                 <?php $no++; } ?>
@@ -86,12 +81,11 @@
                 <form class="forms-sample" method="post">
                     <div class="form-group">
                         <div class="row m-0">
-                            <div class="col-5 p-0 pr-2">
-                                <label for="nama">Nama</label>
-                                <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama..."
-                                    required>
+                            <div class="col-7 p-0 pr-2">
+                                <label for="nama">Nama Store</label>
+                                <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama..." required>
                             </div>
-                            <div class="col-6 p-0 pr-2">
+                            <div class="col-5 p-0">
                                 <label for="kota">Kota</label>
                                 <select class="form-control" id="id_kota" name="id_kota">
                                     <?php 
@@ -105,15 +99,17 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-7 p-0 pr-2">
-                        <Label for="lokasi">Lokasi</Label>
-                        <input type="text-area" class="form-control" id="lokasi" name="lokasi" placeholder="Lokasi..."
-                            required>
+                    <div class="form-group">
+                        <div class="col-12 p-0">
+                            <Label for="lokasi">Lokasi</Label>
+                            <input type="text" class="form-control" id="lokasi" name="lokasi" placeholder="Lokasi..." required>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-success" name="submit-tambah"><i
-                                class="fa fa-check"></i><span> Submit</span></button>
+                        <button type="submit" class="btn btn-success" name="submit-tambah">
+                            <i class="fa fa-check"></i><span> Submit</span>
+                        </button>
                     </div>
                 </form>
             </div>
@@ -133,12 +129,11 @@
                     <input type="hidden" class="d-none" id="ei" name="id_store">
                     <div class="form-group">
                         <div class="row m-0">
-                            <div class="col-5 p-0 pr-2">
-                                <label for="nama">Nama</label>
-                                <input type="text" class="form-control" id="en" name="nama" placeholder="Nama..."
-                                    required>
+                            <div class="col-7 p-0 pr-2">
+                                <label for="nama">Nama Store</label>
+                                <input type="text" class="form-control" id="en" name="nama" placeholder="Nama..." required>
                             </div>
-                            <div class="col-6 p-0 pr-2">
+                            <div class="col-5 p-0">
                                 <label for="kota">Kota</label>
                                 <select class="form-control" id="id_kota" name="id_kota">
                                     <?php 
@@ -152,15 +147,15 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-7 p-0 pr-2">
-                        <Label for="lokasi">Lokasi</Label>
-                        <input type="text-area" class="form-control" id="ed" name="lokasi" placeholder="Lokasi..."
-                            required>
+                    <div class="form-group">
+                        <div class="col-12 p-0">
+                            <Label for="lokasi">Lokasi</Label>
+                            <input type="text" class="form-control" id="el" name="lokasi" placeholder="Lokasi..." required>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-success" name="submit-edit"><i
-                                class="fa fa-check"></i><span> Submit</span></button>
+                        <button type="submit" class="btn btn-success" name="submit-edit"><i class="fa fa-check"></i><span> Submit</span></button>
                     </div>
                 </form>
             </div>
@@ -199,7 +194,7 @@ function edit(id) {
     var data = (document.getElementById(id).textContent).split("|");
     document.getElementById("ei").value = id;
     document.getElementById("en").value = data[0];
-    document.getElementById("ed").value = data[2];
+    document.getElementById("el").value = data[2];
     for (var i = 0; i < document.getElementsByClassName("ev").length; i++) {
         if (document.getElementsByClassName("ev")[i].value == data[1]) {
             document.getElementsByClassName("ev")[i].selected = "true";

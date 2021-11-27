@@ -34,7 +34,7 @@
                                                 <th class="text-center">No</th>
                                                 <th style="min-width: 200px;">Nama</th>
                                                 <th style="width: 100%;">Menu</th>
-                                                <th style="min-width: 100px;">End Date</th>
+                                                <th style="min-width: 150px;">End Date</th>
                                                 <th style="min-width: 110px;"><center>Aksi</center></th>
                                             </tr>
                                         </thead>
@@ -48,16 +48,16 @@
                                                     $end        = $row['end'];
                                                     $foto       = $row['foto'];
                                                     if (empty($foto)) {$foto="default.png";}
-                                                    $nm         = $menu->tampil_id($id_menu)["menu"]
+                                                    $nm         = $menu->tampil_id($id_menu)["nama"]
                                             ?>
                                             <tr>
                                                 <td class="text-center"><?= $no ?></td>
-                                                <!--  <td><?= $nama ?></td> -->
                                                 <td>
-                                                    <img src="assets/images/promo/<?= $foto ?>" alt="user" height="30" width="30" class="rounded-circle mr-2" style="object-fit: cover">
+                                                    <img src="assets/images/promo/<?= $foto ?>" height="30" width="30" class="mr-2" style="object-fit: cover">
                                                     <?= $nama ?>
+                                                </td>
                                                 <td><?= $nm ?></td>
-                                                <td><?= $end ?></td>
+                                                <td><?= date_format(date_create($end),"d F Y H:i"); ?></td>
                                                 <td align="center">
                                                     <button type="button" class="btn btn-s btn-info" title="Edit" data-toggle="modal" data-target="#edit" onclick="edit(<?= $id_promo ?>)"><i class="fa fa-pencil"></i></button>
                                                     <p id="<?= $id_promo ?>" class="d-none"><?php echo $nama.'|'.$id_menu.'|'.$end ?></p>
@@ -84,33 +84,31 @@
                         </div>
                         <div class="modal-body">
                             <form class="forms-sample" method="post">
-                            <div class="form-group">
-                              <div class="row m-0">
-                                <div class="col-5 p-0 pr-2">
-                                  <label for="nama">Nama</label>
-                                  <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama..." required>
+                                <div class="form-group">
+                                  <div class="row m-0">
+                                    <div class="col-6 p-0 pr-2">
+                                      <label for="nama">Nama Promo</label>
+                                      <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama promo..." required>
+                                    </div>
+                                    <div class="col-6 p-0">
+                                      <label for="Menu">Menu</label>
+                                      <select class="form-control" id="id_menu" name="id_menu">
+                                        <?php 
+                                            foreach($data_menu as $row) {
+                                                $im = $row['id_menu'];
+                                                $nm = $row['nama'];
+                                        ?>
+                                        <option value="<?= $im ?>"><?= $nm ?></option>
+                                        <?php } ?>
+                                      </select>
+                                    </div>
+                                  </div>
                                 </div>
                                 <div class="form-group">
-                              <div class="row m-0">
-                                <div class="col-6 p-0 pr-2">
-                                  <label for="Menu">Menu</label>
-                                  <select class="form-control" id="id_menu" name="id_menu">
-                                    <?php 
-                                        foreach($data_menu as $row) {
-                                            $im = $row['id_menu'];
-                                            $nm = $row['vmenu'];
-                                    ?>
-                                    <option value="<?= $im ?>"><?= $nm ?></option>
-                                    <?php } ?>
-                                  </select>
-                                </div>
-                              </div>
-                            </div>
-                              </div>
-                            </div>
-                            <div class="col-7 p-0 pr-2">
-                                  <label for="end">End Date</label>
-                                  <input type="datetime-local" class="form-control" id="end" name="end" placeholder="End Date..." required>
+                                    <div class="p-0">
+                                        <label for="end">End Date</label>
+                                        <input type="datetime-local" class="form-control" id="end" name="end" placeholder="End Date..." required>
+                                    </div>
                                 </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -130,23 +128,21 @@
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                         </div>
                         <div class="modal-body">
-                        <form class="forms-sample" method="post">
-                        <input type="hidden" class="d-none" id="ei" name="id_promo">
+                          <form class="forms-sample" method="post">
+                            <input type="hidden" class="d-none" id="ei" name="id_promo">
                             <div class="form-group">
                               <div class="row m-0">
-                                <div class="col-5 p-0 pr-2">
+                                <div class="col-6 p-0 pr-2">
                                   <label for="nama">Nama</label>
                                   <input type="text" class="form-control" id="en" name="nama" placeholder="Nama..." required>
                                 </div>
-                                <div class="form-group">
-                              <div class="row m-0">
-                                <div class="col-6 p-0 pr-2">
+                                <div class="col-6 p-0">
                                   <label for="menu">Menu</label>
                                   <select class="form-control" name="id_menu">
                                     <?php 
                                         foreach($data_menu as $row) {
                                             $im = $row['id_menu'];
-                                            $nm = $row['menu'];
+                                            $nm = $row['nama'];
                                     ?>
                                     <option class="ev" value="<?= $im ?>"><?= $nm ?></option>
                                     <?php } ?>
@@ -154,12 +150,12 @@
                                 </div>
                               </div>
                             </div>
-                              </div>
-                            </div>
-                            <div class="col-7 p-0 pr-2">
+                            <div class="form-group">
+                                <div class="p-0">
                                   <label for="end">End Date</label>
                                   <input type="datetime-local" class="form-control" id="ed" name="end" placeholder="End Date..." required>
                                 </div>
+                            </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                               <button type="submit" class="btn btn-success" name="submit-edit" ><i class="fa fa-check"></i><span> Submit</span></button>
