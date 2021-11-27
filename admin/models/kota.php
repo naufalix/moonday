@@ -15,6 +15,13 @@
         return $show;
     }
 
+    public function tampil_id($id_kota){
+        $show = $this->db->prepare("SELECT * FROM kota WHERE id_kota = ?");
+        $show->bindParam(1, $id_kota);
+        $show->execute();
+        return $show->fetch();
+    }
+
     public function tambah($kota){
         $insert = $this->db->prepare('INSERT INTO `kota` (`kota`) VALUES (?)');
         $insert->bindParam(1, $kota);
