@@ -52,8 +52,11 @@
     if (isset($_POST["submit-hapus"])) {
       if (!empty($_POST["id_menu"])) {
         $i = $_POST["id_menu"];
+        $f = $menu->tampil_id($i)["foto"];
+        $n = $menu->tampil_id($i)["nama"];
+        unlink("assets/images/menu/$f");
         $menu->hapus($i);
-        $success = " Data Menu berhasil dihapus";
+        $success = $n." berhasil dihapus";
       }
     } 
   

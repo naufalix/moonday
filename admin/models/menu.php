@@ -16,6 +16,13 @@ class menu{
         $insert->execute();
         return $insert;
     }
+
+    public function tampil_id($id_menu){
+        $show = $this->db->prepare("SELECT * FROM menu WHERE id_menu = ?");
+        $show->bindParam(1, $id_menu);
+        $show->execute();
+        return $show->fetch();
+    }
  
     public function tampil()
     {
