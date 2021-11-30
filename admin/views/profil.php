@@ -52,7 +52,7 @@
                                             </button>
                                         </div>
                                         <div class="col-sm-12">
-                                            <a href="index.php?page=ubahpassword" class="btn btn-warning float-left" style="margin-left:20px;" >
+                                            <a href="ubahpassword" class="btn btn-warning float-left" style="margin-left:20px;" >
                                                 <i class="fa fa-lock"></i> Edit Password
                                             </a>
                                         </div>

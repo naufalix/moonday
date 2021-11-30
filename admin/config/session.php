@@ -21,5 +21,5 @@
     //}
     if (empty($foto)) {$foto="default.png";}
   }
-  else {header("Location:index.php?page=login");}
+  else {header("Location:login");}
 ?>

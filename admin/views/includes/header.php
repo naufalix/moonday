@@ -36,10 +36,10 @@
                                 <p class=" m-b-0">username : <?= $username ?></p>
                             </div>
                         </div>
-                        <a class="dropdown-item" href="index.php?page=profil"><i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
-                        <a class="dropdown-item" href="index.php?page=ubahpassword"><i class="ti-settings m-r-5 m-l-5"></i> Change Password</a>
+                        <a class="dropdown-item" href="profil"><i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
+                        <a class="dropdown-item" href="ubahpassword"><i class="ti-settings m-r-5 m-l-5"></i> Change Password</a>
                         <div class="dropdown-divider"></div>
-                        <div class="p-l-30 p-10"><a href="index.php?page=logout" class="btn btn-sm btn-danger btn-rounded"><i class="fa fa-power"></i>Log out</a></div>
+                        <div class="p-l-30 p-10"><a href="logout" class="btn btn-sm btn-danger btn-rounded"><i class="fa fa-power"></i>Log out</a></div>
                     </div>
                 </li>
                 <li style="width:15px"></li>
