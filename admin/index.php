@@ -1,6 +1,6 @@
 <?php  
   session_start(); 
-  require('config/database.php'); 
+  require('../config/database.php'); 
   date_default_timezone_set("Asia/Jakarta"); 
   
   if (!empty($_GET["page"])) {
@@ -12,10 +12,10 @@
     if  (in_array($page, $admin_page)) { $page=$page; }
     else { $page="404"; }
   }
-  else{ $page="profil"; } 
+  else{ $page="dashboard"; } 
   
-  if ($page!="login") {require('config/session.php');}
-  include("config/controller.php"); 
-  include("config/views.php"); 
+  if ($page!="login") {require('../config/session.php');}
+  include("../config/controller.php"); 
+  include("../config/views.php"); 
   //mysqli_close($conn);
 ?> 
