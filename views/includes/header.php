@@ -1,6 +1,6 @@
 <!-- Header desktop -->
 <div class="container-menu-desktop" style="height:70px">
-	<div class="wrap-menu-desktop">
+	<div class="wrap-menu-desktop" style="background-color:white">
 		<nav class="limiter-menu-desktop container" style="background-color:white">
 			
 			<!-- Logo desktop -->		
@@ -11,7 +11,7 @@
 			<!-- Menu desktop -->
 			<div class="menu-desktop" style="margin-left:500px">
 				<ul class="main-menu">
-					<li class="active-menu">
+					<li class="">
 						<a href="index.php?page=home">Home</a>
 					</li>
 					<li>
