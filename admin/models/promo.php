@@ -16,7 +16,14 @@ class promo{
         $insert->execute();
         return $insert;
     }
- 
+    
+    public function tampil_id($id_promo){
+        $show = $this->db->prepare("SELECT * FROM promo WHERE id_promo = ?");
+        $show->bindParam(1, $id_promo);
+        $show->execute();
+        return $show->fetch();
+    }
+
     public function tampil()
     {
         $show = $this->db->prepare("SELECT * FROM `promo`");

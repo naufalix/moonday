@@ -1,5 +1,4 @@
 
-            
             <div class="container-fluid">
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
@@ -53,7 +52,7 @@
                                             <tr>
                                                 <td class="text-center"><?= $no ?></td>
                                                 <td>
-                                                    <img src="assets/images/promo/<?= $foto ?>" height="30" width="30" class="mr-2" style="object-fit: cover">
+                                                    <img src="../assets/images/promo/<?= $foto ?>" height="30" width="30" class="mr-2" style="object-fit: cover">
                                                     <?= $nama ?>
                                                 </td>
                                                 <td><?= $nm ?></td>

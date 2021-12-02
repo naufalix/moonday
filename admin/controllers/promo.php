@@ -38,7 +38,7 @@
       $f_exp   = explode('.',$f_name);
       $f_ext   = end($f_exp);
       $n       = $p.".png";
-      $dir     = 'assets/images/promo/'.$n;
+      $dir     = '../assets/images/promo/'.$n;
       if(move_uploaded_file($f_tmp,$dir)){ 
         $promo->foto($p,$n);
         $success="Foto berhasil diupload";
@@ -51,9 +51,14 @@
     /* Hapus Promo*/ 
     if (isset($_POST["submit-hapus"])) {
       if (!empty($_POST["id_promo"])) {
-        $p = $_POST["id_promo"];
-        $promo->hapus($p);
-        $success = " Data Promo berhasil dihapus";
+        $i = $_POST["id_promo"];
+        $f = $promo->tampil_id($i)["foto"];
+        $n = $promo->tampil_id($i)["nama"];
+        if (!empty($f)) {
+          unlink("../assets/images/promo/$f");
+        }
+        $promo->hapus($i);
+        $success = $n." berhasil dihapus";
       }
     } 
   /* Tampil */

@@ -38,7 +38,7 @@
       $f_exp   = explode('.',$f_name);
       $f_ext   = end($f_exp);
       $n       = $i.".png";
-      $dir     = 'assets/images/menu/'.$n;
+      $dir     = '../assets/images/menu/'.$n;
       if(move_uploaded_file($f_tmp,$dir)){ 
         $menu->foto($i,$n);
         $success="Foto berhasil diupload";
@@ -54,7 +54,9 @@
         $i = $_POST["id_menu"];
         $f = $menu->tampil_id($i)["foto"];
         $n = $menu->tampil_id($i)["nama"];
-        unlink("assets/images/menu/$f");
+        if (!empty($f)) {
+          unlink("../assets/images/menu/$f");
+        }
         $menu->hapus($i);
         $success = $n." berhasil dihapus";
       }

@@ -1,4 +1,3 @@
-
             
             <div class="container-fluid">
                 <div class="row page-titles">
@@ -53,7 +52,7 @@
                                             <tr>
                                                 <td class="text-center"><?= $no ?></td>
                                                 <td>
-                                                    <img src="assets/images/menu/<?= $foto ?>" height="30" width="30" class="mr-2" style="object-fit: cover">
+                                                    <img src="../assets/images/menu/<?= $foto ?>" height="30" width="30" class="mr-2" style="object-fit: cover">
                                                     <?= $nama ?>
                                                 <td><?= $deskripsi ?></td>
                                                 <td><span class="label label-success"><?= $nv ?></span></td>
