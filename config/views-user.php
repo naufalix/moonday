@@ -23,9 +23,6 @@
             <i class="zmdi zmdi-chevron-up"></i>
         </span>
     </div>
-
-    <!-- View Detail -->
-    <?php include("views/includes/detail.php")?>
     
     <?php include("views/includes/script.php")?>
 </body>
