@@ -7,12 +7,13 @@ class store{
         $this->db = $this->db->get_koneksi();
     }
  
-    public function tambah($nama,$id_kota,$lokasi)
+    public function tambah($nama,$alamat,$id_kota,$lokasi)
     {
-        $insert = $this->db->prepare('INSERT INTO `store` (`nama`,`id_kota`,`lokasi`) VALUES (?,?,?)');
+        $insert = $this->db->prepare('INSERT INTO `store` (`nama`,`alamat`,`id_kota`,`lokasi`) VALUES (?,?,?,?)');
         $insert->bindParam(1, $nama);
-        $insert->bindParam(2, $id_kota);
-        $insert->bindParam(3, $lokasi);
+        $insert->bindParam(2, $alamat);
+        $insert->bindParam(3, $id_kota);
+        $insert->bindParam(4, $lokasi);
         $insert->execute();
         return $insert;
     }
@@ -25,12 +26,13 @@ class store{
         return $data;
     }
  
-    public function ubah($id_store,$nama,$id_kota,$lokasi){
-        $update = $this->db->prepare('UPDATE `store` SET `nama`=?, `id_kota`=?, `lokasi`=? WHERE `id_store`=?');
+    public function ubah($id_store,$nama,$alamat,$id_kota,$lokasi){
+        $update = $this->db->prepare('UPDATE `store` SET `nama`=?, `alamat`=?, `id_kota`=?, `lokasi`=? WHERE `id_store`=?');
         $update->bindParam(1, $nama);
-        $update->bindParam(2, $id_kota);
-        $update->bindParam(3, $lokasi);
-        $update->bindParam(4, $id_store);
+        $update->bindParam(2, $alamat);
+        $update->bindParam(3, $id_kota);
+        $update->bindParam(4, $lokasi);
+        $update->bindParam(5, $id_store);
         $update->execute();
         return $update;
     }

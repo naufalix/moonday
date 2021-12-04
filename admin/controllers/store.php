@@ -6,11 +6,12 @@
     
     /* Tambah */ 
     if (isset($_POST["submit-tambah"])) {
-      if (!empty($_POST["nama"]) && !empty($_POST["id_kota"]) && !empty($_POST["lokasi"])) {
+      if (!empty($_POST["nama"]) && !empty($_POST["alamat"]) && !empty($_POST["id_kota"]) && !empty($_POST["lokasi"])) {
         $n = $_POST["nama"];
+        $a = $_POST["alamat"];
         $k = $_POST["id_kota"];
         $l = $_POST["lokasi"];
-        $store->tambah($n,$k,$l);
+        $store->tambah($n,$a,$k,$l);
         $success = "Store berhasil ditambahkan";
         }else {
             $error = "Data Store wajib diisi!";
@@ -19,12 +20,13 @@
   
     /* Edit */
     if (isset($_POST["submit-edit"])) {
-      if (!empty($_POST["id_store"]) && !empty($_POST["nama"]) && !empty($_POST["id_kota"]) && !empty($_POST["lokasi"])) {
+      if (!empty($_POST["id_store"]) && !empty($_POST["nama"]) && !empty($_POST["alamat"]) && !empty($_POST["id_kota"]) && !empty($_POST["lokasi"])) {
         $i = $_POST["id_store"];
         $n = $_POST["nama"];
+        $a = $_POST["alamat"];
         $k = $_POST["id_kota"];
         $l = $_POST["lokasi"];
-          $store->ubah($i,$n,$k,$l);
+          $store->ubah($i,$n,$a,$k,$l);
           $success = "Data berhasil diedit";
       } 
     }

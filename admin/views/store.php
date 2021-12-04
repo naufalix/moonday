@@ -31,8 +31,9 @@
                             <thead>
                                 <tr>
                                     <th class="text-center">No</th>
-                                    <th style="min-width:200px; width: 100%;">Nama</th>
+                                    <th style="min-width:200px;">Nama</th>
                                     <th>Kota</th>
+                                    <th style="min-width:200px; width: 100%;">Alamat</th>
                                     <th>Lokasi</th>
                                     <th style="min-width: 110px;">
                                         <center>Aksi</center>
@@ -45,6 +46,7 @@
                                     foreach($data_store as $row) {
                                         $id_store   = $row['id_store'];
                                         $nama       = $row['nama'];
+                                        $alamat     = $row['alamat'];
                                         $id_kota    = $row['id_kota'];
                                         $nk         = $kota->tampil_id($id_kota)["kota"];
                                         $lokasi     = $row['lokasi'];
@@ -53,10 +55,11 @@
                                     <td class="text-center"><?= $no ?></td>
                                     <td><?= $nama ?></td>
                                     <td><?= $nk ?></td>
-                                    <td><?= $lokasi ?></td>
+                                    <td><?= $alamat ?></td>
+                                    <td><a href="<?= $lokasi ?>" target="_blank"><?= $lokasi ?></a></td>
                                     <td align="center">
                                         <button type="button" class="btn btn-s btn-info" title="Edit" data-toggle="modal" data-target="#edit" onclick="edit(<?= $id_store ?>)"><i class="fa fa-pencil"></i></button>
-                                        <p id="<?= $id_store ?>" class="d-none"><?php echo $nama.'|'.$id_kota.'|'.$lokasi ?></p>
+                                        <p id="<?= $id_store ?>" class="d-none"><?php echo $nama.'|'.$alamat.'|'.$id_kota.'|'.$lokasi ?></p>
                                         <button type="button" class="btn btn-s btn-danger" title="Hapus" data-toggle="modal" data-target="#hapus" onclick="hapus(<?= $id_store ?>)"><i class="fa fa-trash"></i></button>
                                     </td>
                                 </tr>
@@ -103,6 +106,12 @@
                         <div class="col-12 p-0">
                             <Label for="lokasi">Lokasi</Label>
                             <input type="text" class="form-control" id="lokasi" name="lokasi" placeholder="Lokasi..." required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-12 p-0">
+                            <Label for="alamat">Alamat</Label>
+                            <textarea type="text" class="form-control" rows="3" id="alamat" name="alamat" placeholder="Alamat..." required></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -153,6 +162,12 @@
                             <input type="text" class="form-control" id="el" name="lokasi" placeholder="Lokasi..." required>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <div class="col-12 p-0">
+                            <Label for="alamat">Alamat</Label>
+                            <textarea type="text" class="form-control" rows="3" id="ea" name="alamat" placeholder="Alamat..." required></textarea>
+                        </div>
+                    </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                         <button type="submit" class="btn btn-success" name="submit-edit"><i class="fa fa-check"></i><span> Submit</span></button>
@@ -194,9 +209,10 @@ function edit(id) {
     var data = (document.getElementById(id).textContent).split("|");
     document.getElementById("ei").value = id;
     document.getElementById("en").value = data[0];
-    document.getElementById("el").value = data[2];
+    document.getElementById("ea").value = data[1];
+    document.getElementById("el").value = data[3];
     for (var i = 0; i < document.getElementsByClassName("ev").length; i++) {
-        if (document.getElementsByClassName("ev")[i].value == data[1]) {
+        if (document.getElementsByClassName("ev")[i].value == data[2]) {
             document.getElementsByClassName("ev")[i].selected = "true";
         }
     }
