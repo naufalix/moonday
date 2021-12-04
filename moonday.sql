@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 27, 2021 at 06:55 PM
+-- Generation Time: Dec 04, 2021 at 07:12 PM
 -- Server version: 10.4.20-MariaDB-log
 -- PHP Version: 8.0.9
 
@@ -51,7 +51,8 @@ CREATE TABLE `kota` (
 
 INSERT INTO `kota` (`id_kota`, `kota`) VALUES
 (2, 'Jakarta'),
-(3, 'Surabaya');
+(3, 'Malang'),
+(4, 'Bandung');
 
 -- --------------------------------------------------------
 
@@ -72,10 +73,22 @@ CREATE TABLE `menu` (
 --
 
 INSERT INTO `menu` (`id_menu`, `nama`, `deskripsi`, `id_varian`, `foto`) VALUES
-(1, 'Matcha Latte', 'Deskripsi Matcha Latte', 2, ''),
-(2, 'Brown Sugar Boba Milk Tea', 'Deskripsi Brown Sugar Boba Milk Tea', 3, ''),
-(4, 'Green Tea', 'Deskripsi Green Tea', 3, ''),
-(6, 'Black Coffe', 'Deskripsi Black Coffe', 1, '');
+(1, 'Americano', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 1, '1.png'),
+(2, 'Avocado Smoothie', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 2, '2.png'),
+(4, 'Biscoff Cloud Coffee', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 1, '4.png'),
+(6, 'Caramel Latte', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 1, '6.png'),
+(8, 'Caramel Macchiato', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 1, '8.png'),
+(9, 'Choco Mousse', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 2, '9.png'),
+(10, 'Cinnamon Milk Latte', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 1, '10.png'),
+(11, 'Cold Brew', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 1, '11.png'),
+(12, 'Dalgona Coffee', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 1, '12.png'),
+(13, 'Hojicha Hot Chocolate', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 2, '13.png'),
+(14, 'Hojicha Latte', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 1, '14.png'),
+(15, 'Honeycomb Latte', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 1, '15.png'),
+(16, 'Matcha Latte', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 2, '16.png'),
+(17, 'Milk Bubble Tea', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 2, '17.png'),
+(18, 'Pineapple Mango Smoothie', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 2, '18.png'),
+(19, 'Pumpkin Smoothie', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 2, '19.png');
 
 -- --------------------------------------------------------
 
@@ -87,6 +100,7 @@ CREATE TABLE `promo` (
   `id_promo` int(11) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `id_menu` int(11) NOT NULL,
+  `start` datetime DEFAULT NULL,
   `end` datetime NOT NULL,
   `foto` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -95,9 +109,11 @@ CREATE TABLE `promo` (
 -- Dumping data for table `promo`
 --
 
-INSERT INTO `promo` (`id_promo`, `nama`, `id_menu`, `end`, `foto`) VALUES
-(1, 'Monday Madness', 1, '2021-11-30 23:37:00', ''),
-(2, 'Coffee Night', 2, '2021-12-10 23:41:00', '');
+INSERT INTO `promo` (`id_promo`, `nama`, `id_menu`, `start`, `end`, `foto`) VALUES
+(1, 'Healthy Month', 1, '2021-11-01 00:00:00', '2021-11-30 23:59:00', ''),
+(2, 'Cold Brew Season', 1, '2021-10-25 00:00:00', '2021-12-01 23:59:00', ''),
+(5, 'Strawberry Festival', 2, '2021-11-20 00:00:00', '2021-12-08 23:59:00', ''),
+(6, 'Night Coffee', 4, '2021-10-01 00:00:00', '2021-12-31 23:59:00', '');
 
 -- --------------------------------------------------------
 
@@ -118,7 +134,12 @@ CREATE TABLE `store` (
 --
 
 INSERT INTO `store` (`id_store`, `nama`, `alamat`, `id_kota`, `lokasi`) VALUES
-(1, 'Cabang Jakarta', '', 2, 'lokasi');
+(1, 'Moonday Kelapa Gading', 'Jl. Raya Klp. Hybrida Blok A1 No. 8 Kecamatan Kelapa Gading Kota Jakarta Utara', 2, 'https://goo.gl/maps/sHjSuUWeMube7Qmy5'),
+(3, 'Moonday Jatiwaringin', 'Jl. Raya Jatiwaringin No. 20, Cipinang Melayu Kecamatan Makassar, Jakarta', 2, 'https://goo.gl/maps/5gJkkxaRPi4BTFSa7'),
+(4, 'Moonday Town Square Malang', 'Town Square Malang lt. 2 Jl. Veteran, Penanggungan, Kota Malang', 3, 'https://goo.gl/maps/BgUKw3umyAJBPscK8'),
+(5, 'Moonday Lowokwaru', 'Jl. Bunga Camalia No. 1, Lowokwaru, Kota Malang', 3, 'https://goo.gl/maps/EfP3z9GgJ8wsh49Z8'),
+(6, 'Moonday PVJ Bandung', 'Paris Van Java lt. 3 Jl. Sukajadi Cipedes, Bandung', 4, 'https://goo.gl/maps/UrFn1M75ENPNKfRNA'),
+(7, 'Moonday TSM Bandung', 'Trans Studio Bandung lt. 2 Jl. Gatot Subroto, Cibangkong, Batununggal, Bandung', 4, 'https://g.page/transstudiomallbandung?share');
 
 -- --------------------------------------------------------
 
@@ -231,25 +252,25 @@ ALTER TABLE `about`
 -- AUTO_INCREMENT for table `kota`
 --
 ALTER TABLE `kota`
-  MODIFY `id_kota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_kota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `promo`
 --
 ALTER TABLE `promo`
-  MODIFY `id_promo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_promo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `store`
 --
 ALTER TABLE `store`
-  MODIFY `id_store` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_store` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `user`
