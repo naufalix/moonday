@@ -7,12 +7,13 @@ class promo{
         $this->db = $this->db->get_koneksi();
     }
  
-    public function tambah($nama,$id_menu,$end)
+    public function tambah($nama,$id_menu,$start,$end)
     {
-        $insert = $this->db->prepare('INSERT INTO promo (nama,id_menu,end) VALUES (?,?,?)');
+        $insert = $this->db->prepare('INSERT INTO promo (nama,id_menu,start,end) VALUES (?,?,?,?)');
         $insert->bindParam(1, $nama);
         $insert->bindParam(2, $id_menu);
-        $insert->bindParam(3, $end);
+        $insert->bindParam(3, $start);
+        $insert->bindParam(4, $end);
         $insert->execute();
         return $insert;
     }
@@ -32,12 +33,13 @@ class promo{
         return $data;
     }
  
-    public function ubah($id_promo,$nama,$id_menu,$end){
-        $update = $this->db->prepare('UPDATE promo SET nama=?, id_menu=?, end =? WHERE `id_promo`=?');
+    public function ubah($id_promo,$nama,$id_menu,$start,$end){
+        $update = $this->db->prepare('UPDATE promo SET nama=?, id_menu=?, start=?, end=? WHERE `id_promo`=?');
         $update->bindParam(1, $nama);
         $update->bindParam(2, $id_menu);
-        $update->bindParam(3, $end);
-        $update->bindParam(4, $id_promo);
+        $update->bindParam(3, $start);
+        $update->bindParam(4, $end);
+        $update->bindParam(5, $id_promo);
         $update->execute();
         return $update;
     }

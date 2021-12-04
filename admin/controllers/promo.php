@@ -6,25 +6,27 @@
     
     /* Tambah */ 
     if (isset($_POST["submit-tambah"])) {
-      if (!empty($_POST["nama"])&&!empty($_POST["id_menu"])&&!empty($_POST["end"])) {
+      if (!empty($_POST["nama"])&&!empty($_POST["id_menu"])&&!empty($_POST["start"])&&!empty($_POST["end"])) {
         $n = $_POST["nama"];
         $m = $_POST["id_menu"];
-        $end = $_POST["end"];
-        $promo->tambah($n,$m,$end);
+        $s = $_POST["start"];
+        $e = $_POST["end"];
+        $promo->tambah($n,$m,$s,$e);
         $success = "Promo berhasil ditambahkan";
-        }else {
-            $error = "Data Promo wajib diisi!";
-        }
+      }else {
+          $error = "Data Promo wajib diisi!";
+      }
     }
   
     /* Edit promo */
     if (isset($_POST["submit-edit"])) {
-      if (!empty($_POST["id_promo"])&&!empty($_POST["nama"])&&!empty($_POST["id_menu"])&&!empty($_POST["end"])) {
+      if (!empty($_POST["id_promo"])&&!empty($_POST["nama"])&&!empty($_POST["id_menu"])&&!empty($_POST["start"])&&!empty($_POST["end"])) {
         $p = $_POST["id_promo"];
         $n = $_POST["nama"];
         $m = $_POST["id_menu"];
-        $end = $_POST["end"];
-          $promo->ubah($p,$n,$m,$end);
+        $s = $_POST["start"];
+        $e = $_POST["end"];
+          $promo->ubah($p,$n,$m,$s,$e);
           $success = "Data berhasil diedit";
       } 
     }
