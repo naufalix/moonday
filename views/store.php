@@ -9,44 +9,29 @@
 	<!-- Product -->
 	<div class="bg0 m-t-30 p-b-140">
 		<div class="container">
-			<div class="flex-w flex-sb-m p-b-42 m-l-80">
+			<div class="flex-w flex-sb-m p-b-42">
 				<div class="flex-w flex-l-m filter-tope-group m-tb-10">
 					<button class="mtext-101 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1" data-filter="*">
 						All Stores
 					</button>
-
-					<button class="mtext-101 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter="">
-						Jakarta
+					<?php foreach($kota->tampil() as $row) { $kot = $row['kota']; ?>
+					<button class="mtext-101 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".<?= $kot  ?>">
+						<?= $kot  ?>
 					</button>
-
-					<button class="mtext-101 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter="">
-						Malang
-					</button>
-
-					<button class="mtext-101 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter="">
-						Bandung
-					</button>
+					<?php } ?>
 				</div>
 			</div>
 
 			<div class="row isotope-grid">
-				<div class="col-sm-6 col-md-4 col-lg-5 p-b-20 m-b-50 m-l-80 isotope-item" style="border: 2px solid peru">
-					<!-- Block2 -->
-					<div class="block2">
-
-						<div class="block2-txt flex-w flex-t p-t-14">
-							<div class="block2-txt-child1 flex-col-l ">
-								<span class="mtext-112 p-b-6">
-									Moonday Kelapa Gading
-								</span>
-
-								<span class="stext-105 cl3">
-									Jl. Raya Klp. Hybrida Blok A1 No. 8 Kecamatan Kelapa Gading Kota Jakarta Utara
-								</span>
-							</div>
-						</div>
-					</div>
-				</div>
+				<?php
+                    foreach($data_store as $row) {
+                        $id_store   = $row['id_store'];
+                        $nama       = $row['nama'];
+                        $alamat     = $row['alamat'];
+                        $id_kota    = $row['id_kota'];
+                        $lokasi     = $row['lokasi'];
+                        $nk         = $kota->tampil_id($id_kota)["kota"]
+                ?>
 
 				<div class="col-sm-6 col-md-4 col-lg-5 p-b-20 m-b-50 m-l-80 isotope-item" style="border: 2px solid peru">
 					<!-- Block2 -->
@@ -140,4 +125,4 @@
 			</div>
 		</div>
 	</div>
-		
+	<?php } ?>	
