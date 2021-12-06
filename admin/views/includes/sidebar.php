@@ -16,6 +16,10 @@
                     <i class="fa fa-user-circle-o"></i><span class="hide-menu">Profil</span></a>
                 </li>
                 <li> 
+                    <a class="waves-effect waves-dark" href="about" aria-expanded="false">
+                    <i class="fa fa-address-card-o"></i><span class="hide-menu"></span>About</a>
+                </li>
+                <li> 
                     <a class="waves-effect waves-dark" href="menu" aria-expanded="false">
                     <i class="fa fa-coffee"></i><span class="hide-menu"></span>Menu</a>
                 </li>
