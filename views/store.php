@@ -32,97 +32,18 @@
                         $lokasi     = $row['lokasi'];
                         $nk         = $kota->tampil_id($id_kota)["kota"]
                 ?>
-
-				<div class="col-sm-6 col-md-4 col-lg-5 p-b-20 m-b-50 m-l-80 isotope-item" style="border: 2px solid peru">
+				<div class="col-sm-6 col-md-4 col-lg-5 p-b-20 m-b-50 m-l-80 isotope-item <?= $nk ?>" style="border: 2px solid peru">
 					<!-- Block2 -->
 					<div class="block2">
-
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
-								<span class="mtext-112 p-b-6">
-									Moonday Jatiwaringin
-								</span>
-
-								<span class="stext-105 cl3">
-									Jl. Raya Jatiwaringin No. 20, Cipinang Melayu Kecamatan Makassar, Jakarta
-								</span>
+								<span class="mtext-112 p-b-6"><?= $nama ?></span>
+								<span class="stext-105 cl3"><?= $alamat ?></span>
 							</div>
 						</div>
 					</div>
 				</div>
-
-				<div class="col-sm-6 col-md-4 col-lg-5 p-b-20 m-b-50 m-l-80 isotope-item" style="border: 2px solid peru">
-					<!-- Block2 -->
-					<div class="block2">
-
-						<div class="block2-txt flex-w flex-t p-t-14">
-							<div class="block2-txt-child1 flex-col-l ">
-								<span class="mtext-112 p-b-6">
-									Moonday Town Square Malang
-								</span>
-
-								<span class="stext-105 cl3">
-									Town Square Malang lt. 2 Jl. Veteran, Penanggungan, Kota Malang
-								</span>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-sm-6 col-md-4 col-lg-5 p-b-20 m-b-50 m-l-80 isotope-item" style="border: 2px solid peru">
-					<!-- Block2 -->
-					<div class="block2">
-
-						<div class="block2-txt flex-w flex-t p-t-14">
-							<div class="block2-txt-child1 flex-col-l ">
-								<span class="mtext-112 p-b-6">
-									Moonday Lowokwaru
-								</span>
-
-								<span class="stext-105 cl3">
-									Jl. Bunga Camalia No. 1, Lowokwaru, Kota Malang
-								</span>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-sm-6 col-md-4 col-lg-5 p-b-20 m-b-50 m-l-80 isotope-item" style="border: 2px solid peru">
-					<!-- Block2 -->
-					<div class="block2">
-
-						<div class="block2-txt flex-w flex-t p-t-14">
-							<div class="block2-txt-child1 flex-col-l ">
-								<span class="mtext-112 p-b-6">
-									Moonday PVJ Bandung
-								</span>
-
-								<span class="stext-105 cl3">
-									Paris Van Java lt. 3 Jl. Sukajadi Cipedes, Bandung
-								</span>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-sm-6 col-md-4 col-lg-5 p-b-20 m-b-50 m-l-80 isotope-item" style="border: 2px solid peru">
-					<!-- Block2 -->
-					<div class="block2">
-
-						<div class="block2-txt flex-w flex-t p-t-14">
-							<div class="block2-txt-child1 flex-col-l ">
-								<span class="mtext-112 p-b-6">
-									Moonday TSM Bandung
-								</span>
-
-								<span class="stext-105 cl3">
-									Trans Studio Bandung lt. 2 Jl. Gatot Subroto, Cibangkong, Batununggal, Bandung
-								</span>
-							</div>
-						</div>
-					</div>
-				</div>
+				<?php } ?>
 			</div>
 		</div>
 	</div>
-	<?php } ?>	
