@@ -1,3 +1,24 @@
+	<style type="text/css">
+		.countdown {padding: 0px 5px; position: absolute; right: 0; background-color: #6c7ae0; border-radius: 0px 0px 0px 5px;}
+	</style>
+	<script type="text/javascript">
+        function setCountdown(id,cd){
+        	var x = setInterval(function() {
+	          var now       = new Date().getTime();
+	          var end 		= new Date(cd).getTime()
+	          var distance  = end-now;
+	          var days      = Math.floor(distance/(1000*60*60*24));
+	          var hours     = Math.floor((distance%(1000*60*60*24))/(1000*60*60)); if (hours<10){hours="0"+hours}
+	          var minutes   = Math.floor((distance%(1000*60*60))/(1000*60)); if (minutes<10){minutes="0"+minutes}
+	          var seconds   = Math.floor((distance%(1000*60))/1000); if (seconds<10){seconds="0"+seconds}
+	          document.getElementById(id).innerHTML = days+":"+hours+":"+minutes+":"+seconds;
+	          if (distance < 0) {
+	            clearInterval(x);
+	            document.getElementById(id).innerHTML = "Promo has ended";
+	          }
+	        }, 1000);
+        }
+    </script>
 
 	<!-- Title page -->
 	<section class="bg-img1 txt-center p-lr-15 p-tb-92 m-t-80" style="background-image: url('assets/images/bg1.jpg');">
@@ -5,10 +26,8 @@
 			Promotions
 		</h2>
 	</section>	
-	
-	
-	
-
+	<div class="bg0 m-t-60 p-b-140">
+		<div class="container">
 			<div class="row isotope-grid">
 				<?php
                    foreach($data_promo as $row) {
@@ -21,10 +40,16 @@
 					if (empty($foto)) {$foto="default.png";}
 					$nm       = $menu->tampil_id($id_menu)["nama"]
                 ?>
-				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item <?= $nv ?>">
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item">
 					<!-- Block2 -->
 					<div class="block2">
 						<div class="block2-pic hov-img0">
+							<div class="countdown">
+								<p id="c<?= $id_promo ?>" class="text-white">00:00:00:00</p>
+								<script type="text/javascript">
+									setCountdown('c<?= $id_promo ?>','<?= date_format(date_create($end),"Y-m-d H:i:s") ?>')
+								</script>
+							</div>
 							<img src="assets/images/promo/<?= $foto ?>" alt="Img-<?= $nama ?>">
 							<a href="#" onclick="detail(<?= $id_promo ?>)" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
 								View Detail
@@ -36,7 +61,10 @@
 								<p class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 									<?= $nama ?>
 								</p>
-								<span class="stext-105 cl3"><?= date_format(date_create($start),"d F Y") ?></span>-<span class="stext-105 cl3"><?= date_format(date_create($end),"d F Y") ?></span>
+								<span class="stext-105 cl3">
+									<?= date_format(date_create($start),"d F") ?>
+									 - <?= date_format(date_create($end),"d F") ?>
+								</span>
 							</div>
 						</div>
 					</div>
@@ -90,4 +118,4 @@
 			document.getElementById("ak").textContent = data[3];
             document.getElementById("df").src = "assets/images/promo/"+data[4];
         }
-	</script>
+    </script>

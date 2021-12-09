@@ -1,4 +1,7 @@
-
+	<style type="text/css">
+		.location{font-size: 24px; color: #6c7ae0; position: absolute; right: 15px; bottom: 10px;}
+	</style>
+	
 	<!-- Title page -->
 	<section class="bg-img1 txt-center p-lr-15 p-tb-92 m-t-80" style="background-image: url('assets/images/bg2.jpg');">
 		<h2 class="ltext-105 cl0 txt-center">
@@ -38,6 +41,9 @@
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<span class="mtext-112 p-b-6"><?= $nama ?></span>
+								<a href="<?= $lokasi ?>" target="_blank" class="location">
+									<i class="fa fa-map-marker" title="View on google maps"></i>
+								</a>
 								<span class="stext-105 cl3"><?= $alamat ?></span>
 							</div>
 						</div>
