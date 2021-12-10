@@ -32,6 +32,7 @@
                                 <tr>
                                     <th class="text-center">No</th>
                                     <th style="width: 100%;">kota</th>
+                                    <th style="min-width: 100px;">Jumlah store</th>
                                     <th style="min-width: 110px;">
                                         <center>Aksi</center>
                                     </th>
@@ -42,17 +43,18 @@
                                     $no=1;
                                     foreach($dataKota as $row) {
                                         $id_kota = $row['id_kota'];
-                                        $kota    = $row['kota'];
+                                        $nk      = $row['kota'];
+                                        $jumlah  = $kota->cek_hapus($id_kota);
                                 ?>
                                 <tr>
                                     <td class="text-center"><?= $no ?></td>
-                                    <td><?= $kota ?></td>
-
+                                    <td><?= $nk ?></td>
+                                    <td><?= count($jumlah) ?></td>
                                     <td align="center">
                                         <button type="button" class="btn btn-s btn-info" title="Edit"
                                             data-toggle="modal" data-target="#edit" onclick="edit(<?= $id_kota ?>)"><i
                                                 class="fa fa-pencil"></i></button>
-                                        <p id="<?= $id_kota ?>" class="d-none"><?php echo $kota ?></p>
+                                        <p id="<?= $id_kota ?>" class="d-none"><?php echo $nk ?></p>
                                         <button type="button" class="btn btn-s btn-danger" title="Hapus"
                                             data-toggle="modal" data-target="#hapus" onclick="hapus(<?= $id_kota ?>)"><i
                                                 class="fa fa-trash"></i></button>

@@ -25,8 +25,11 @@
   if (isset($_POST["submit-hapus"])) {
     if (!empty($_POST["id_varian"])) {
       $i = $_POST["id_varian"];
-      $varian->hapus($i);
-      $success = " Data Varian berhasil dihapus";
+      $cek = $varian->cek_hapus($i);
+      if (!$cek) {
+        $varian->hapus($i);
+        $success = " Data Varian berhasil dihapus";
+      } else {$error = "Varian sedang digunakan oleh ".count($cek)." menu";}
     }
   } 
 

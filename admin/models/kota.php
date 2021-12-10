@@ -44,4 +44,11 @@
         return $delete;
     }
 
+    public function cek_hapus($id_kota){
+        $show = $this->db->prepare("SELECT * FROM store WHERE id_kota = ?");
+        $show->bindParam(1, $id_kota);
+        $show->execute();
+        return $show->fetchAll();
+    }
+
     }

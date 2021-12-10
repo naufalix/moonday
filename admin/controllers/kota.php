@@ -24,9 +24,12 @@
     /* Hapus Data*/
     if (isset($_POST["submit-hapus"])) {
         if (!empty($_POST["id_kota"])) {
-        $idKota = $_POST["id_kota"];
-        $kota->hapus($idKota);
-        $success = "Data kota berhasil dihapus";
+            $idKota = $_POST["id_kota"];
+            $cek = $kota->cek_hapus($idKota);
+            if (!$cek) {
+                $kota->hapus($idKota);
+                $success = "Data kota berhasil dihapus";
+            } else { $error = "Kota sedang digunakan oleh ".count($cek)." store"; }
         }
     }
     

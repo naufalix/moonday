@@ -32,6 +32,7 @@
                                             <tr>
                                                 <th class="text-center">No</th>
                                                 <th style="width: 100%;">Varian</th>
+                                                <th style="min-width: 100px;">Jumlah menu</th>
                                                 <th style="min-width: 110px;"><center>Aksi</center></th>
                                             </tr>
                                         </thead>
@@ -39,16 +40,17 @@
                                             <?php
                                                 $no=1;
                                                 foreach($data_varian as $row) {
-                                                    $id_varian    = $row['id_varian'];
-                                                    $varian       = $row['varian'];
+                                                    $id_varian = $row['id_varian'];
+                                                    $nv        = $row['varian'];
+                                                    $jumlah    = $varian->cek_hapus($id_varian);
                                             ?>
                                             <tr>
                                                 <td class="text-center"><?= $no ?></td>
-                                                <td><?= $varian ?></td>
-                                                
+                                                <td><?= $nv ?></td>
+                                                <td><?= count($jumlah) ?></td>
                                                 <td align="center">
                                                     <button type="button" class="btn btn-s btn-info" title="Edit" data-toggle="modal" data-target="#edit" onclick="edit(<?= $id_varian ?>)"><i class="fa fa-pencil"></i></button>
-                                                    <p id="<?= $id_varian ?>" class="d-none"><?php echo $varian ?></p>
+                                                    <p id="<?= $id_varian ?>" class="d-none"><?php echo $nv ?></p>
                                                     <button type="button" class="btn btn-s btn-danger" title="Hapus" data-toggle="modal" data-target="#hapus" onclick="hapus(<?= $id_varian ?>)"><i class="fa fa-trash"></i></button>
                                                 </td>
                                             </tr>

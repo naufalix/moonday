@@ -45,5 +45,12 @@ class varian{
         $delete->execute();
         return $delete;
     }
+
+    public function cek_hapus($id_varian){
+        $show = $this->db->prepare("SELECT * FROM menu WHERE id_varian = ?");
+        $show->bindParam(1, $id_varian);
+        $show->execute();
+        return $show->fetchAll();
+    }
 }
 ?>
