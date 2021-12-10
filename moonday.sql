@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2021 at 07:12 PM
+-- Generation Time: Dec 10, 2021 at 06:21 PM
 -- Server version: 10.4.20-MariaDB-log
 -- PHP Version: 8.0.9
 
@@ -33,6 +33,16 @@ CREATE TABLE `about` (
   `deskripsi` text NOT NULL,
   `foto` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `about`
+--
+
+INSERT INTO `about` (`id_about`, `judul`, `deskripsi`, `foto`) VALUES
+(1, 'Our Story', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consequat consequat enim, non auctor massa ultrices non. Morbi sed odio massa. Quisque at vehicula tellus, sed tincidunt augue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas varius egestas diam, eu sodales metus scelerisque congue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas gravida justo eu arcu egestas convallis. Nullam eu erat bibendum, tempus ipsum eget, dictum enim. Donec non neque ut enim dapibus tincidunt vitae nec augue. Suspendisse potenti. Proin ut est diam. Donec condimentum euismod tortor, eget facilisis diam faucibus et. Morbi a tempor elit.', '1.png'),
+(2, 'Our Story 2', 'Donec gravida lorem elit, quis condimentum ex semper sit amet. Fusce eget ligula magna. Aliquam aliquam imperdiet sodales. Ut fringilla turpis in vehicula vehicula. Pellentesque congue ac orci ut gravida. Aliquam erat volutpat. Donec iaculis lectus a arcu facilisis, eu sodales lectus sagittis. Etiam pellentesque, magna vel dictum rutrum, neque justo eleifend elit, vel tincidunt erat arcu ut sem. Sed rutrum, turpis ut commodo efficitur, quam velit convallis ipsum, et maximus enim ligula ac ligula.\r\n<br><br>\r\nAny questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879', '2.png'),
+(3, 'Our Mission', 'Mauris non lacinia magna. Sed nec lobortis dolor. Vestibulum rhoncus dignissim risus, sed consectetur erat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam maximus mauris sit amet odio convallis, in pharetra magna gravida. Praesent sed nunc fermentum mi molestie tempor. Morbi vitae viverra odio. Pellentesque ac velit egestas, luctus arcu non, laoreet mauris. Sed in ipsum tempor, consequat odio in, porttitor ante. Ut mauris ligula, volutpat in sodales in, porta non odio. Pellentesque tempor urna vitae mi vestibulum, nec venenatis nulla lobortis. Proin at gravida ante. Mauris auctor purus at lacus maximus euismod. Pellentesque vulputate massa ut nisl hendrerit, eget elementum libero iaculis.', '3.png'),
+(4, '- Steve Job’s', 'Creativity is just connecting things. When you ask creative people how they did something, they feel a little guilty because they didn\'t really do it, they just saw something. It seemed obvious to them after a while.', '');
 
 -- --------------------------------------------------------
 
@@ -86,9 +96,13 @@ INSERT INTO `menu` (`id_menu`, `nama`, `deskripsi`, `id_varian`, `foto`) VALUES
 (14, 'Hojicha Latte', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 1, '14.png'),
 (15, 'Honeycomb Latte', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 1, '15.png'),
 (16, 'Matcha Latte', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 2, '16.png'),
-(17, 'Milk Bubble Tea', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 2, '17.png'),
+(17, 'Milk Bubble Tea', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 3, '17.png'),
 (18, 'Pineapple Mango Smoothie', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 2, '18.png'),
-(19, 'Pumpkin Smoothie', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 2, '19.png');
+(19, 'Pumpkin Smoothie', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 2, '19.png'),
+(20, 'Raspberry Smoothie', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 2, '20.png'),
+(21, 'Korean Strawberry Milk', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit.\r\n', 2, '21.png'),
+(22, 'Strawberry Bubble Tea', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 3, '22.png'),
+(23, 'Thai Bubble Tea', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 3, '23.png');
 
 -- --------------------------------------------------------
 
@@ -110,10 +124,10 @@ CREATE TABLE `promo` (
 --
 
 INSERT INTO `promo` (`id_promo`, `nama`, `id_menu`, `start`, `end`, `foto`) VALUES
-(1, 'Healthy Month', 1, '2021-11-01 00:00:00', '2021-11-30 23:59:00', ''),
-(2, 'Cold Brew Season', 1, '2021-10-25 00:00:00', '2021-12-01 23:59:00', ''),
-(5, 'Strawberry Festival', 2, '2021-11-20 00:00:00', '2021-12-08 23:59:00', ''),
-(6, 'Night Coffee', 4, '2021-10-01 00:00:00', '2021-12-31 23:59:00', '');
+(1, 'Healthy Month', 1, '2021-11-01 00:00:00', '2021-11-30 23:59:00', '1.png'),
+(2, 'Cold Brew Season', 1, '2021-10-25 00:00:00', '2021-12-01 23:59:00', '2.png'),
+(5, 'Strawberry Festival', 1, '2021-11-25 21:09:00', '2021-12-25 23:59:00', '5.png'),
+(6, 'Night Coffee', 4, '2021-10-01 00:00:00', '2021-12-31 23:59:00', '6.png');
 
 -- --------------------------------------------------------
 
@@ -246,7 +260,7 @@ ALTER TABLE `varian`
 -- AUTO_INCREMENT for table `about`
 --
 ALTER TABLE `about`
-  MODIFY `id_about` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_about` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `kota`
@@ -258,7 +272,7 @@ ALTER TABLE `kota`
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `promo`
