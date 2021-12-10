@@ -34,7 +34,7 @@
       $f_exp   = explode('.',$f_name);
       $f_ext   = end($f_exp);
       $n       = $i.".png";
-      $dir     = '../admin/assets/images/about/'.$n;
+      $dir     = '../assets/images/about/'.$n;
       if(move_uploaded_file($f_tmp,$dir)){ 
         $about->foto($i,$n);
         $success="Foto berhasil diupload";
@@ -51,7 +51,7 @@
         $f = $about->tampil_id($i)["foto"];
         $n = $about->tampil_id($i)["judul"];
         if (!empty($f)) {
-          unlink("../admin/assets/images/about/$f");
+          unlink("../assets/images/about/$f");
         }
         $about->hapus($i);
         $success = $n." berhasil dihapus";

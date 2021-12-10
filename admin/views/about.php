@@ -49,7 +49,7 @@
                                             <tr>
                                                 <td class="text-center"><?= $no ?></td>
                                                 <td>
-                                                    <img src="../admin/assets/images/about/<?= $foto ?>" height="30" width="30" class="mr-2" style="object-fit: cover">
+                                                    <img src="../assets/images/about/<?= $foto ?>" height="30" width="30" class="mr-2" style="object-fit: cover">
                                                     <?= $judul ?>
                                                 <td><?= $deskripsi ?></td>
                                                 <td align="center">
@@ -70,7 +70,7 @@
             </div>
 
             <div id="tambah" class="modal" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
-                <div class="modal-dialog modal-md">
+                <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h4 class="modal-title">Form tambah About</h4>
@@ -80,7 +80,7 @@
                             <form class="forms-sample" method="post">
                             <div class="form-group">
                               <div class="row m-0">
-                                <div class="col-7 p-0 pr-2">
+                                <div class="col-12 p-0">
                                   <label for="judul">Judul</label>
                                   <input type="text" class="form-control" id="judul" name="judul" placeholder="Judul..." required>
                                 </div>
@@ -105,7 +105,7 @@
             </div>
 
             <div id="edit" class="modal" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
-                <div class="modal-dialog modal-md">
+                <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h4 class="modal-title">Form Edit About</h4>
@@ -116,7 +116,7 @@
                         <input type="hidden" class="d-none" id="ei" name="id_about">
                             <div class="form-group">
                               <div class="row m-0">
-                                <div class="col-7 p-0 pr-2">
+                                <div class="col-12 p-0">
                                   <label for="judul">Judul</label>
                                   <input type="text" class="form-control" id="en" name="judul" placeholder="Judul..." required>
                                 </div>

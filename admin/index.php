@@ -7,7 +7,7 @@
     $page = $_GET["page"];
     if  ($page=="logout") {header("Location:logout.php");}
     $admin_page = array(
-      "dashboard","kota","login","menu","profil","promo","store","ubahpassword","user","varian"
+      "about","dashboard","kota","login","menu","profil","promo","store","ubahpassword","user","varian"
     );
     if  (in_array($page, $admin_page)) { $page=$page; }
     else { $page="404"; }
