@@ -28,7 +28,7 @@
 					This non-realistic coffee shop was made by the end of october by group 1 of class SI 3C.<br>
 					Moonday insired by the beauty of the moon night, and also the madness of monday.<br>
 					No one likes monday. But with moonday coffee, your mondays will be as bright as the moon in the night sky.<br>
-					Moonday to lighten up your mondays! Wanna know <a href="index.php?page=about">more about us</a>?
+					Moonday to lighten up your mondays! Wanna know <a href="about">more about us</a>?
 				</p>
 			</div>
 		</div>
@@ -86,7 +86,7 @@
 
 			<!-- Load more -->
 			<div class="flex-c-m flex-w w-full p-t-25">
-				<a href="index.php?page=menu" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
+				<a href="menu" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
 					More Menu
 				</a>
 			</div>
@@ -110,7 +110,7 @@
 					<div class="block1 wrap-pic-w">
 						<img src="assets/images/promo.jpg" alt="IMG-BANNER">
 
-						<a href="index.php?page=promo" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+						<a href="promo" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
 							<div class="block1-txt-child1 flex-col-l">
 								<span class="block1-name ltext-102 trans-04 p-b-8">
 									Promo
@@ -135,7 +135,7 @@
 					<div class="block1 wrap-pic-w">
 						<img src="assets/images/store.jpg" alt="IMG-BANNER">
 
-						<a href="index.php?page=store" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+						<a href="store" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
 							<div class="block1-txt-child1 flex-col-l">
 								<span class="block1-name ltext-102 trans-04 p-b-8">
 									Store
@@ -160,7 +160,7 @@
 					<div class="block1 wrap-pic-w">
 						<img src="assets/images/about.jpg" alt="IMG-BANNER">
 
-						<a href="index.php?page=about" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+						<a href="about" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
 							<div class="block1-txt-child1 flex-col-l">
 								<span class="block1-name ltext-102 trans-04 p-b-8">
 									About Us
