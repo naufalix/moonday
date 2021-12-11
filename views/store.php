@@ -35,7 +35,7 @@
                         $lokasi     = $row['lokasi'];
                         $nk         = $kota->tampil_id($id_kota)["kota"]
                 ?>
-				<div class="col-sm-6 col-md-4 col-lg-5 p-b-20 m-b-50 m-l-80 isotope-item <?= $nk ?>" style="border: 2px solid peru">
+				<div class="col-10 col-sm-6 col-md-4 col-lg-5 p-b-20 m-b-50 m-l-40 m-r-40 isotope-item <?= $nk ?>" style="border: 2px solid peru">
 					<!-- Block2 -->
 					<div class="block2">
 						<div class="block2-txt flex-w flex-t p-t-14">
