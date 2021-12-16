@@ -31,8 +31,8 @@
                                         <thead>
                                             <tr>
                                                 <th class="text-center">No</th>
-                                                <th style="width: 100%;">Nama</th>
-                                                <th>Username</th>
+                                                <th style="min-width: 250px; width: 100%;">Nama</th>
+                                                <th style="min-width: 110px;">Username</th>
                                                 <th>Role</th>
                                                 <th style="min-width: 110px;"><center>Aksi</center></th>
                                             </tr>
@@ -50,9 +50,8 @@
                                             ?>
                                             <tr>
                                                 <td class="text-center"><?= $no ?></td>
-                                               <!--  <td><?= $nama ?></td> -->
                                                 <td>
-                                                    <img src="assets/images/users/<?= $foto ?>" alt="user" height="30" width="30" class="rounded-circle mr-2" style="object-fit: cover">
+                                                    <img src="assets/images/users/<?= $foto ?>" alt="user" height="30" width="30" class="rounded-circle mr-2 img-profil">
                                                     <?= $nama ?>
                                                 </td>
                                                 <td><?= $username ?></td>

@@ -32,7 +32,7 @@
                                             <tr>
                                                 <th class="text-center">No</th>
                                                 <th style="min-width: 200px;">Nama</th>
-                                                <th style="width: 100%;">Menu</th>
+                                                <th style="min-width: 150px; width: 100%;">Menu</th>
                                                 <th style="min-width: 150px;">Start Date</th>
                                                 <th style="min-width: 150px;">End Date</th>
                                                 <th style="min-width: 110px;"><center>Aksi</center></th>

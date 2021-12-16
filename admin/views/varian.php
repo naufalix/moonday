@@ -31,7 +31,7 @@
                                         <thead>
                                             <tr>
                                                 <th class="text-center">No</th>
-                                                <th style="width: 100%;">Varian</th>
+                                                <th style="min-width: 100px; width: 100%;">Varian</th>
                                                 <th style="min-width: 100px;">Jumlah menu</th>
                                                 <th style="min-width: 110px;"><center>Aksi</center></th>
                                             </tr>

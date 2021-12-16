@@ -21,4 +21,5 @@
 
     <style type="text/css">
         td {vertical-align: middle !important; padding: 12px !important;}
+        .img-profil {object-fit: cover; object-position: top;}
     </style>

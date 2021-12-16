@@ -54,7 +54,7 @@
 							<a href="#" onclick="detail(<?= $id_promo ?>)" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
 								View Detail
 							</a>
-							<p id="<?= $id_promo ?>" class="d-none"><?php echo $nama.'|'.$nm.'|'.$start.'|'.$end.'|'.$foto ?></p>
+							<p id="<?= $id_promo ?>" class="d-none"><?php echo $nama.'|'.$nm.'|'.date_format(date_create($start),"d F Y H:i").'|'.date_format(date_create($end),"d F Y H:i").'|'.$foto ?></p>
 						</div>
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
@@ -76,7 +76,7 @@
 
 	<div class="wrap-modal1 js-modal1 p-t-60 p-b-20">
 		<div class="overlay-modal1 js-hide-modal1"></div>
-		<div class="container" style="width:900px">
+		<div class="mx-auto px-4 col-md-7">
 			<div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
 				<button class="how-pos3 hov3 trans-04 js-hide-modal1">
 					<img src="assets/images/icons/icon-close.png" alt="CLOSE">
@@ -113,9 +113,9 @@
 		function detail(id){
             var data = (document.getElementById(id).textContent).split("|");
             document.getElementById("dm").textContent = data[0];
-            document.getElementById("dv").textContent = data[1];
-            document.getElementById("aa").textContent = data[2];
-			document.getElementById("ak").textContent = data[3];
+            document.getElementById("dv").textContent = "Menu : "+data[1];
+            document.getElementById("aa").textContent = "Start at : "+data[2];
+			document.getElementById("ak").textContent = "End at : "+data[3];
             document.getElementById("df").src = "assets/images/promo/"+data[4];
         }
     </script>

@@ -32,7 +32,7 @@
                                             <tr>
                                                 <th class="text-center">No</th>
                                                 <th style="min-width: 200px;">Judul</th>
-                                                <th style="width: 100%;">Deskripsi</th>
+                                                <th style="min-width: 850px; width: 100%;">Deskripsi</th>
                                                 <th style="min-width: 110px;"><center>Aksi</center></th>
                                             </tr>
                                         </thead>

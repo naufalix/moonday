@@ -1,7 +1,7 @@
 
             <div class="container-fluid">
                 <!-- Row -->
-                <div class="row" style="width:800px;margin:auto;">
+                <div class="row m-auto col-md-7">
                     <div class="col-lg-8 col-xlg-9 col-md-7" style="margin:auto;">
                         <div class="card" style="background-color:floralwhite;border-radius:10px">
                             <!-- Tab panes -->
